@@ -4,9 +4,9 @@
 Google Trends is a powerful tool wich let you watch the people interests in timeline. It is used in marketing researchs, 
 advertisment analisys or comparing trend lines with other data. 
 
-Google Trends have some limitations:
-  * There are no API to use it in your program
-  * You can not compare more than 5 keywords
+gTrends solves the main Google Trends limitation:
+  * No API to use it in code
+  * Impossibility of comparing more than 5 keywords
   
 This project represents a Web API for Google Trends with easy to use functionality. It is not deployed yet, but it is already working on localhost.
 To run the webserver just compile this rust project. There is an example wich you could run with this command in your terminal.
