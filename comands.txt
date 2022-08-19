@@ -1,0 +1,26 @@
+time:
+"now 1-H"
+"now 4-H"
+"now 1-d"
+"now 7-d"
+"today 1-m"
+"today 3-m"
+"today 12-m"
+"today 5-y"
+"YYYY-MM-DD YYYY-MM-DD"
+"YYYY-MM-DDTHH YYYY-MM-DDTHH"
+
+geo:
+""
+"ru"
+
+
+hl:
+"en"
+"ru"
+
+tz:
+0
+60
+120
+180
