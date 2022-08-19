@@ -12,6 +12,7 @@ This project represents a Web API for Google Trends with easy to use functionali
 To run the webserver just compile this rust project. There is an example wich you could run with this command in your terminal.
 
 `cargo run --example chart`
+
 It will create a chart comparing 6 programming languages.
 ![Language popularity](/chart.svg)
 
