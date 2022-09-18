@@ -13,7 +13,7 @@ type TrendList<'a> = Vec<Trend<'a>>;
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
     let client = reqwest::Client::new();
-    let keywords = fs::read("keywords.json").unwrap();
+    let _keywords = fs::read("keywords.json").unwrap();
     /* let response = client
     .post("http://127.0.0.1:8000/api/?time=today+12-m")
     .body(keywords)
