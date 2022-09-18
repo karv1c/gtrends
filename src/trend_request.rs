@@ -53,7 +53,7 @@ pub struct ReqParams<'a> {
     pub hl: &'a str,
     pub time: &'a str,
     pub geo: &'a str,
-    pub keywords: Option<Vec<&'a str>>
+    //pub keywords: Option<Vec<&'a str>>
 }
 #[derive(Debug)]
 pub struct TrendRequest<'a> {
@@ -134,7 +134,7 @@ impl<'a> TrendRequest<'a> {
                 let newlist: Vec<&str> =
                     max_trend_list_clone.into_iter().map(|a| a.title).collect();
                 max_trend_list.clear();
-                
+
                 let lists: Vec<Vec<&str>> = if newlist.len() > 5 {
                     newlist.chunks(4).map(|s| s.into()).collect()
                 } else {
@@ -167,7 +167,6 @@ impl<'a> TrendRequest<'a> {
                     list.push(max_title);
                 }
 
-                
                 let headers_clone = headers.clone();
                 let timing_clone = timing.clone();
                 let set_timing_clone = set_timing.clone();
@@ -265,6 +264,7 @@ where
         .await?;
     let raw_explore_resp = explore_resp.text().await?;
     let formatted_explore_resp = &raw_explore_resp[5..];
+    //println!("{formatted_explore_resp}");
     let json_explore_resp: Value = serde_json::from_str(formatted_explore_resp)?;
     let token_raw = json_explore_resp["widgets"][0]["token"].to_string();
     let token = token_raw.trim_matches('"');
@@ -276,6 +276,7 @@ where
     let data_resp = client.get(data_url).headers(headers).send().await?;
     let raw_data_resp = data_resp.text().await?;
     let formatted_data_resp = &raw_data_resp[5..];
+    //println!("{formatted_data_resp}");
     let json_data_resp: Value = serde_json::from_str(formatted_data_resp)?;
     let points = json_data_resp["default"]["timelineData"]
         .as_array()
@@ -283,7 +284,11 @@ where
     if !*set_timing.read().await {
         for point in points {
             let point_time: u32 = point["time"].to_string().trim_matches('"').parse()?;
-            let point_formatted_time = point["formattedAxisTime"].as_str().unwrap().trim_matches('\"').to_string();
+            let point_formatted_time = point["formattedAxisTime"]
+                .as_str()
+                .unwrap()
+                .trim_matches('\"')
+                .to_string();
             timing
                 .write()
                 .await

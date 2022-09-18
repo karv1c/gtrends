@@ -14,3 +14,4 @@ url = "2.2.2"
 serde = { version = "1.0.142", features = ["derive"] }
 plotters = "0.3.2"
 chrono = "0.4.22"
+rand = "0.8.5"

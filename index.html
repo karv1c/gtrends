@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!-- CSS only -->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <title>Free Google Trends API</title>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+      </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bd-navbar bg-primary">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Google Trends API Plus</span>
+        
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  <a class="nav-link" href="/use">API</a>
+                  <a class="nav-link" href="/about">About</a>
+                </div>
+              </div>
+        </div>
+    </nav>
+    <div class="container  py-5">
+        <div class="row">
+                <div class="col-lg-5">
+                    <p class="h1 mb-4">Welcome</p>
+                    <p class="lead mb-4">Try an easy to use Google Trends API for your researches. Find the best keyword, comparing more than 5 words. Match the trends with another information in programmable way.</p>
+                    <p class="lead mb-2">Try it now:</p>
+                    <form action="/request" method="get">
+                        <div class="form-group">
+                            <label class="lead" for="time">Choose a timeline:</label>
+                            <select class="form-select" id="time" name="time">
+                                <option value="now 1-H">1 Hour</option>
+                                <option value="now 4-H">4 Hours</option>
+                                <option value="now 1-d">1 Day</option>
+                                <option value="now 7-d">7 Days</option>
+                                <option value="today 1-m">1 Month</option>
+                                <option value="today 3-m">3 Months</option>
+                                <option value="today 12-m">12 Months</option>
+                                <option value="today 5-y" selected>5 Years</option>
+                            </select>
+                            <div class="py-2">
+                                <label class="lead" for="time">Enter keywords:</label>
+                                <input type="text" name="keywords" class="form-control" placeholder="Enter keywords comma separated" value="Rust, Blockchain">
+                            </div>
+                            <input type="submit" class="btn btn-outline-primary" value="Show Trends">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-7">
+                    <img class="img-fluid" src = "chart.svg" alt="gTrend plot"/>
+                </div>
+        </div>
+        <div class="row">
+            <p class="h1 mb-4">Quick Start</p>
+            <p class="lead mb-4">Make a GET request to a following url with your keywords comma separated:</p>
+            <div class="bg-light border" style="width: 30rem;">
+                http://gtrendsapi.com/api/?keywords=
+            </div>
+            <p class="lead my-4">For example, to get data for keywords "Dog" and "Cat" use this request:</p>
+            <div class="bg-light border" style="width: 30rem;">
+                http://gtrendsapi.com/api/?keywords=dog,cat
+            </div>
+            <div class="my-4">
+                <span class="lead">Note, that you can compare as many words as you want. For more usage information visit the </span><a class="lead" href="/use">API</a>
+                <span class="lead"> page.</span>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+  </body>
+</html>

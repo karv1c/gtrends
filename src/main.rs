@@ -4,6 +4,7 @@ use std::error::Error;
 use hyper::service::{make_service_fn, service_fn};
 use hyper::Server;
 
+mod chart;
 mod handler;
 mod trend_request;
 use crate::handler::*;
