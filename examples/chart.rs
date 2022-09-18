@@ -1,5 +1,4 @@
-use chrono::{Date, DateTime, TimeZone, Utc};
-use plotters::prelude::LabelAreaPosition::Bottom;
+use chrono::{DateTime, TimeZone, Utc};
 use plotters::prelude::*;
 use serde_json::Value;
 use std::{error::Error, fs};
@@ -13,14 +12,14 @@ type TrendList<'a> = Vec<Trend<'a>>;
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
     let client = reqwest::Client::new();
-    let _keywords = fs::read("keywords.json").unwrap();
-    /* let response = client
+    let keywords = fs::read("keywords.json").unwrap();
+    let response = client
     .post("http://127.0.0.1:8000/api/?time=today+12-m")
     .body(keywords)
-    .send(); */
-    let response = client
+    .send(); 
+    /* let response = client
         .get("http://127.0.0.1:8000/api/?time=today+5-y&keywords=Rust,Blockchain")
-        .send();
+        .send(); */
 
     let raw_response = response.await.unwrap().text().await.unwrap();
     println!("{}", raw_response);
