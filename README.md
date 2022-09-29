@@ -19,6 +19,6 @@ It will create a chart comparing 6 programming languages.
 The work on the project is still in progress. Here is some milestones to do:
 
 - [x] Make the API work
-- [ ] Simple web site to show how it works
+- [x] Simple web site to show how it works
 - [ ] Example of comparing Bitcoin price from different source with its trend line
-- [ ] Quickstart guide
+- [x] Quickstart guide
