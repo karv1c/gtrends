@@ -8,7 +8,7 @@ gTrends solves the main Google Trends limitation:
   * No API to use it in code
   * Impossibility of comparing more than 5 keywords
   
-This project represents a Web API for Google Trends with easy to use functionality. It is not deployed yet, but it is already working on localhost.
+This project represents a Web API for Google Trends with easy to use functionality. It is deployed on Rust webserver available on http://gtrendsapi.tech.
 To run the webserver just compile this rust project. There is an example wich you could run with this command in your terminal.
 
 `cargo run --example chart`
